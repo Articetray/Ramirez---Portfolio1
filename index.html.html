@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Justine Marie Ramirez | Projects</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(180deg,#190019,#2B124C,#522B5B);
+    color:#FBE4D8;
+    overflow-x:hidden;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(25,0,25,.85);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#DFB6B2;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#FBE4D8;
+    transition:.3s;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#DFB6B2;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 10%;
+    gap:60px;
+}
+
+.hero-text{
+    animation:fadeUp 1s ease;
+}
+
+.hero-text h3{
+    color:#DFB6B2;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.hero-text h1{
+    font-size:65px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero-text h2{
+    color:#DFB6B2;
+    font-size:32px; 
+    margin-bottom:20px;
+    white-space: nowrap; 
+}
+
+.hero-text p{
+    line-height:1.9;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:40px;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:600;
+}
+
+.secondary-btn{
+    border:2px solid #DFB6B2;
+    color:#DFB6B2;
+}
+
+.secondary-btn:hover{
+    background:#DFB6B2;
+    color:#190019;
+}
+
+.social-icons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#2B124C;
+    color:#FBE4D8;
+    transition:.3s;
+    text-decoration:none;
+}
+
+.social-icons a:hover{
+    background:#DFB6B2;
+    color:#190019;
+    transform:translateY(-5px);
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image img{
+    width:360px;
+    border-radius:30px;
+    box-shadow:
+    0 0 25px #854F6C,
+    0 0 50px #522B5B,
+    0 0 80px rgba(133,79,108,.6);
+    animation:float 4s ease-in-out infinite;
+}
+
+/* GENERAL */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:60px;
+    color:#DFB6B2;
+}
+
+/* ABOUT */
+
+.about-card{
+    background:#2B124C;
+    padding:45px;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+.about-card p{
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.expertise-title{
+    margin-top:20px;
+    margin-bottom:25px;
+    color:#DFB6B2;
+    font-size:24px;
+}
+
+.expertise-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.expertise-item{
+    background:#190019;
+    padding:18px 22px;
+    border-radius:15px;
+    border-left:5px solid #854F6C;
+    transition:.3s;
+}
+
+.expertise-item:hover{
+    transform:translateY(-5px);
+}
+
+/* PROJECTS CONTAINER */
+
+.portfolio-container{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+}
+
+.portfolio-card{
+    background:#2B124C;
+    border-radius:25px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:450px 1fr;
+    transition:.4s;
+    box-shadow:0 0 20px rgba(0,0,0,.25);
+}
+
+.portfolio-card:hover{
+    transform:translateY(-10px);
+    box-shadow:
+    0 0 20px #854F6C,
+    0 0 45px rgba(133,79,108,.4);
+}
+
+.portfolio-image{
+    position:relative;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.portfolio-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* SPLIT-SCREEN IMAGE LOOK FOR DOCS */
+
+.doc-preview-wrapper {
+    width:100%;
+    height:100%;
+    background:#ffffff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.doc-preview-wrapper img {
+    max-width:100%;
+    max-height:80%;
+    object-fit:contain;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* SLIDER DOTS LIKE IN THE PICTURE */
+
+.slider-dots{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+    justify-content:center;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#ccc;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#854F6C;
+    width:12px;
+    height:12px;
+}
+
+.portfolio-content{
+    padding:40px;
+}
+
+.portfolio-tag{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:#854F6C;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.portfolio-content h3{
+    font-size:30px;
+    color:#DFB6B2;
+    margin-bottom:15px;
+}
+
+.portfolio-content p{
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+/* LIST STYLING FOR THE DOCUMENT LINK CLUSTER */
+
+.doc-links-list{
+    list-style:none;
+    margin-top:20px;
+}
+
+.doc-links-list li{
+    margin-bottom:15px;
+    position:relative;
+    padding-left:20px;
+}
+
+.doc-links-list li::before{
+    content:"■";
+    position:absolute;
+    left:0;
+    color:#DFB6B2;
+    font-size:12px;
+    top:2px;
+}
+
+.doc-links-list a{
+    color:#FBE4D8;
+    text-decoration:underline;
+    font-size:18px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.doc-links-list a:hover{
+    color:#DFB6B2;
+    text-shadow:0 0 8px rgba(223,182,178,0.5);
+}
+
+.portfolio-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.portfolio-tech span{
+    background:#190019;
+    padding:10px 16px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+.portfolio-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.view-doc-btn{
+    padding:12px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    border: none;
+    cursor: pointer;
+    background:#DFB6B2;
+    color:#190019;
+}
+
+.view-doc-btn:hover{
+    background:white;
+}
+
+.source-code-btn{
+    padding:12px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    cursor: pointer;
+    background: transparent;
+    border:2px solid #DFB6B2;
+    color:#DFB6B2;
+}
+
+.source-code-btn:hover{
+    background:#DFB6B2;
+    color:#190019;
+}
+
+/* SKILLS */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:#2B124C;
+    padding:25px;
+    border-radius:20px;
+}
+
+.skill-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.progress{
+    width:100%;
+    height:12px;
+    background:#190019;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:12px;
+    background:#DFB6B2;
+    border-radius:20px;
+}
+
+/* CONTACT */
+
+.contact-card{
+    background:#2B124C;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.contact-info{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-item{
+    background:#190019;
+    padding:20px 30px;
+    border-radius:20px;
+    min-width:250px;
+    transition: .3s;
+}
+
+.contact-item:hover{
+    transform: translateY(-3px);
+}
+
+.contact-item i{
+    font-size:28px;
+    color:#DFB6B2;
+    margin-bottom:10px;
+}
+
+.contact-item a{
+    color:#FBE4D8;
+    text-decoration:none;
+    transition: .3s;
+}
+
+.contact-item a:hover{
+    color:#DFB6B2;
+}
+
+/* FOOTER */
+
+footer{
+    background:#190019;
+    text-align:center;
+    padding:35px;
+    margin-top:50px;
+}
+
+footer p{
+    opacity:.8;
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+    .hero-buttons{
+        justify-content:center;
+    }
+    .social-icons{
+        justify-content:center;
+    }
+    .hero-text h1{
+        font-size:48px;
+    }
+    .hero-text h2{
+        font-size:24px;
+        white-space: normal; 
+    }
+    .portfolio-card{
+        grid-template-columns:1fr;
+    }
+    .portfolio-image{
+        height:300px;
+    }
+}
+
+@media(max-width:700px){
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+    nav ul{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .hero-text h1{
+        font-size:38px;
+    }
+    .section-title{
+        font-size:35px;
+    }
+    .hero-image img{
+        width:280px;
+    }
+    .about-card,
+    .contact-card{
+        padding:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Justine Marie Ramirez</div>
+<ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home" class="hero">
+<div class="hero-text">
+    <h3>Hello, I'm</h3>
+    <h1>Justine Marie Ramirez</h1>
+    <h2>System Analyst • Web Developer • Researcher</h2>
+    <p>
+    Bachelor of Science in Information Systems student at Davao del Norte State College. Passionate about system analysis, web development, database management, and academic research.
+    </p>
+    <div class="hero-buttons">
+        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://web.facebook.com/justinemarie.ramirez.520/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://github.com/Articetray" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/justine-marie-ramirez/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+<div class="hero-image">
+    <img src="MyProfile.jpg" alt="Justine Marie Ramirez">
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="about-card">
+    <p>
+    I am currently pursuing a Bachelor of Science in Information Systems at Davao del Norte State College. I am passionate about technology and continuously improving my skills in web development, database management, system analysis, and IT documentation.
+    </p>
+    <p>
+    Through academic projects, seminars, and hands-on experiences, I have developed technical knowledge in Java programming, networking, database management, research writing, and system development while also strengthening my communication, adaptability, and problem-solving skills.
+    </p>
+    <p>
+    I aspire to become a skilled IS professional capable of contributing to innovative and technology-driven environments while continuously learning and growing in the field of Information Systems.
+    </p>
+    <h3 class="expertise-title">Areas of Expertise</h3>
+    <div class="expertise-grid">
+        <div class="expertise-item">Web Development & Design</div>
+        <div class="expertise-item">Database Management</div>
+        <div class="expertise-item">System Analysis</div>
+        <div class="expertise-item">Network Configuration</div>
+        <div class="expertise-item">Research Documentation</div>
+        <div class="expertise-item">Java Programming</div>
+    </div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">My Projects</h2>
+<div class="portfolio-container">
+
+    <div class="portfolio-card">
+        <div class="portfolio-image">
+            <img src="stock-system.png" alt="Stock Monitoring System">
+        </div>
+        <div class="portfolio-content">
+            
+            <h3>A&D Lechon Manok: Stock Monitoring and Valuation System</h3>
+            <p>
+            A system developed to efficiently monitor inventory and product valuation based on size classifications. The system improves inventory management, tracking, and reporting processes for business operations.
+            </p>
+            <div class="portfolio-tech">
+             
+            </div>
+            <div class="portfolio-buttons">
+                <a href="https://drive.google.com/file/d/1LjCUMJtq1KY-_G7-Bj0CFT_9q6L_QQFH/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <button class="view-doc-btn">View Documentation</button>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-card">
+        <div class="portfolio-image">
+            <img src="incident-system.png" alt="Incident Reporting System">
+        </div>
+        <div class="portfolio-content">
+            <h3>Panabo Incident Reporting System</h3>
+            <p>
+            Developed as the final project for IS221 – System Analysis and Design. The system aims to streamline incident reporting and management through a more organized and efficient digital process.
+            </p>
+            <div class="portfolio-tech">
+                            </div>
+            <div class="portfolio-buttons">
+                <a href="https://drive.google.com/file/d/1fU7rssQBzKVAwYbrsLvVg4jkj_g610xz/view" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <button class="view-doc-btn">View Documentation</button>
+                </a>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-card">
+        <div class="portfolio-image">
+            <div class="doc-preview-wrapper">
+                <img src="research-preview.png" alt="Research Article Preview">
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <h3>Academic Research Papers</h3>
+            <p>Click the titles below to view the full paper.</p>
+            <ul class="doc-links-list">
+                <li><a href="https://drive.google.com/file/d/1vyd6vATQdh6wCnIlpQ-L6hvWKyO9g2wQ/view?usp=sharing" target="_blank">Relationship between Cybersecurity Awareness and Security Behaviors</a></li>
+                <li><a href="https://drive.google.com/file/d/1u-4b7ctUPGH-6ClP80vd9hPMwJFqwEKl/view" target="_blank">Plan for A&D Lechon Manok</a></li>
+                <li><a href="https://drive.google.com/file/d/1WwihdPyTGU1cEXsOeAmZX1jEgnSIrSLW/view?usp=sharing"_blank">Panabo City Police Station: A Business Process Management Plan </a></li>
+                <li><a href="https://drive.google.com/file/d/1kHYGYL2Vcdax8DAJ2S0wMBNCcD9bGL8O/view" target="_blank">Data Structure and Algorithm (Splay Tree)</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+<div class="skills-grid">
+    <div class="skill-card">
+        <div class="skill-header"><span>Java Programming</span><span>85%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+    </div>
+    <div class="skill-card">
+        <div class="skill-header"><span>Database Management</span><span>85%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+    </div>
+    <div class="skill-card">
+        <div class="skill-header"><span>Web Design</span><span>80%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+    </div>
+    <div class="skill-card">
+        <div class="skill-header"><span>Research Documentation</span><span>90%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+    </div>
+    <div class="skill-card">
+        <div class="skill-header"><span>Microsoft Office</span><span>95%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+    </div>
+    <div class="skill-card">
+        <div class="skill-header"><span>Network Configuration</span><span>75%</span></div>
+        <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+    </div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Me</h2>
+<div class="contact-card">
+    <p>Feel free to reach out for collaborations, projects, academic work, or opportunities related to Information Systems and technology.</p>
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p><a href="mailto:jr2555453@gmail.com">jr2555453@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-facebook-f"></i>
+            <p><a href="https://web.facebook.com/justinemarie.ramirez.520/" target="_blank">Facebook Profile</a></p>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-linkedin-in"></i>
+            <p><a href="https://www.linkedin.com/in/justine-marie-ramirez/" target="_blank">LinkedIn Profile</a></p>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <p><a href="https://github.com/Articetray" target="_blank">GitHub Profile</a></p>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-location-dot"></i>
+            <p>Davao del Norte, Philippines</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<footer>
+<p>"Continuous learning, innovation, and dedication are the foundations of my journey in Information Systems."</p>
+</footer>
+
+</body>
+</html>
